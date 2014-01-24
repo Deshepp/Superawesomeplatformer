@@ -47,7 +47,8 @@
 	
 	
 	
-	function Awake(){
+	function Awake()
+	{
 			SetUpImagesIfMissing();
 	
 	}
@@ -72,14 +73,16 @@
 		else
 			isInMotionStartingArea	= new Rect (Screen.width / 2 + 50, 50, Screen.width / 2 - 100, Screen.height - 100);
 		// Touches 
-		if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer) {
+		if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer) 
+		{  	
 			if (Input.touchCount == 0) {
 				ShowHideMotion(false);
 			}
 					
 			for(var touch : Touch in Input.touches)
 			{
-				if (touch.phase == TouchPhase.Canceled || touch.phase == TouchPhase.Ended) {
+				if (touch.phase == TouchPhase.Canceled || touch.phase == TouchPhase.Ended) 
+				{
 					
 					if (motionFingerNum == touch.fingerId) {
 						motionFingerNum = -1;
@@ -90,11 +93,14 @@
 					}
 					
 				}
-				if (Time.time > motionFTime + fingerTimeBeforeJoystickAppears && motionFingerNum == touch.fingerId ) {
+				if (Time.time > motionFTime + fingerTimeBeforeJoystickAppears && motionFingerNum == touch.fingerId ) 
+				{
+					
 					if (movementStickShowing)
-						UpdateMotion(touch.position);
+						UpdateMotion(touch.position); 
 					else
 						ShowHideMotion(true);
+					
 				
 				}
 				

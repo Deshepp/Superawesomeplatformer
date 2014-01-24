@@ -24,6 +24,8 @@ private var character : CharacterController;
 private var velocity : Vector3;						// Used for continuing momentum while in air
 private var canJump = true;
 
+
+
 function Start()
 {
 	// Cache component lookup at startup instead of doing this every frame		
@@ -53,9 +55,12 @@ function Update()
 	// Apply movement from move joystick
 	if ( moveTouchPad.position.x > 0 )
 		movement = Vector3.right * forwardSpeed * moveTouchPad.position.x;
+		//animation.Play ("run");
 	else
 		movement = Vector3.right * backwardSpeed * moveTouchPad.position.x;
 	
+	
+    
 	// Check for jump
 	if ( character.isGrounded )
 	{		
